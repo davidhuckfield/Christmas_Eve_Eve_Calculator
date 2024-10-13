@@ -1,27 +1,31 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from datetime import datetime, date
 
 app = Flask(__name__)
 
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 def home():
-    message = xmas_eve_calc()
+    message = ""
+    if request.method == 'POST':
+        # Get the date input from the form
+        input_date_str = request.form.get('input_date')
+        input_date = datetime.strptime(input_date_str, '%Y-%m-%d').date()
+        message = xmas_eve_calc(input_date)
     return render_template('index.html', message=message)
 
-def xmas_eve_calc():
-    input_date = date(2024, 10, 13)
+def xmas_eve_calc(input_date):
     xmas_day = date(2024, 12, 25)
     days = xmas_day - input_date
-    print(days)
-    return_string="Today is Christmas "
+    return_string = "Today is Christmas "
     days_number = days.days
+    
     for i in range(days_number):
         return_string += "Eve "
-  
+    
     return_string += ". There are "
     return_string += str(days_number)
     return_string += " days until Christmas!"
-    print(return_string)
+    
     return return_string
 
 if __name__ == '__main__':

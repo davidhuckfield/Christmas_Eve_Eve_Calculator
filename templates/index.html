@@ -6,8 +6,14 @@
     <title>My Flask App</title>
 </head>
 <body>
-    <h1>Welcome to My Flask App!</h1>
-    <p>This is a simple front-end page.</p>
+    <h1>Christmas Eve Calculator V2.0</h1>
+
+    <form method="POST">
+        <label for="input_date">Enter a date (YYYY-MM-DD):</label>
+        <input type="date" id="input_date" name="input_date" required>
+        <button type="submit">Calculate Days Until Christmas</button>
+    </form>
+
     <p>{{ message }}</p>
 </body>
 </html>
