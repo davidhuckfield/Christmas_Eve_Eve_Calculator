@@ -44,7 +44,7 @@ label {
 
 input {
     margin-bottom:10px;
-    width:25em;
+    max-width:70vw;
     height:3em;
     background-color:rgb(16, 100, 1);
     font-size:0.8em;
@@ -57,6 +57,7 @@ input {
 
 button {
     width:25em;
+    max-width:70vw;
     height:3em;
     background-color:rgb(173,10,4);
     font-size:0.8em;
