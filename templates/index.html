@@ -3,12 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Flask App</title>
+    <title>Xmas Eve Eve Calculator</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}"/>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@400;700&display=swap" rel="stylesheet">
+
+    <meta property="og:title" content="Xmas Eve Calculator" />
+    <meta property="og:description" content="Find out how many days are left until Christmas Eve!" />
+    <meta property="og:image" content="{{ url_for('static', filename='images/preview-image.png', _external=True) }}" />
+    <meta property="og:url" content="{{ request.url }}" />
+    <meta property="og:type" content="website" />
 
 </head>
 <body>
