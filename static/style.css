@@ -1,17 +1,73 @@
 body {
-    background-color: darkgreen;
+    background-color: black;
+    font-family:"Mountains of Christmas", serif;
+}
+
+#snow-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Place behind main content */
 }
 
 #main {
-    background-color: green;
-    margin:auto;
-    width:70%;
+    position: relative;
+    background-color: rgba(11, 64, 4, 0.7);
+    padding: 20px;
+    margin: 50px;
+    border-radius: 15px;
+    color: white;
     text-align:center;
-    padding:20px;
-    border-radius:15px;
-    border:2px solid rgb(5, 47, 5);
+    border:3px solid rgb(173,10,4);
+    font-size:2em;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
 }
 
 h1 {
     color:rgb(173, 10, 4);
+    
+}
+
+form {
+    align-items: center;
+    display:flex;
+    flex-direction:column;
+}
+
+label {
+    margin:5px;
+}
+
+input {
+    margin-bottom:10px;
+    width:25em;
+    height:3em;
+    background-color:rgb(16, 100, 1);
+    font-size:0.8em;
+    text-align:center;
+    color:white;
+    font-family:"Mountains of Christmas", serif;
+    border-radius:15px;
+    border:2px solid white;
+}
+
+button {
+    width:25em;
+    height:3em;
+    background-color:rgb(173,10,4);
+    font-size:0.8em;
+    text-align:center;
+    color:white;
+    font-family:"Mountains of Christmas", serif;
+    border-radius:15px;
+    border:2px solid white;
+}
+
+#message {
+    max-width:50%;
+    height:auto;
 }
