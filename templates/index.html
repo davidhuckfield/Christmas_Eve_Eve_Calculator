@@ -25,11 +25,49 @@
     </form>
 
     <p id="message">{{ message }}</p>
+    <button id="copy-button" onclick="copyToClipboard()" style="display:none;">Copy</button>
 </div>
-<script src="{{ url_for('static', filename='snow.js') }}">
+<script src="{{ url_for('static', filename='snow.js') }}"></script>
+<script>
     window.onload = function() {
         document.querySelector('form').reset();
     };
+
+    window.onload = function() {
+            document.querySelector('form').reset();
+            toggleCopyButton(); // Call the function on page load
+        };
+
+        function toggleCopyButton() {
+            // Get the message and button elements
+            var message = document.getElementById('message').innerText;
+            var copyButton = document.getElementById('copy-button');
+
+            // Show the button if the message has content, otherwise hide it
+            if (message.trim()) {
+                copyButton.style.display = 'block';
+            } else {
+                copyButton.style.display = 'none';
+            }
+        }
+
+    function copyToClipboard() {
+            // Get the message element
+            var message = document.getElementById('message').innerText;
+
+            // Check if message is not empty before trying to copy
+            if (message) {
+                // Copy the text to clipboard using the Clipboard API
+                navigator.clipboard.writeText(message).then(function() {
+                    alert('Copied to clipboard!');
+                }).catch(function(err) {
+                    console.error('Error copying text: ', err);
+                    alert('Failed to copy. Please try again.');
+                });
+            } else {
+                alert('There is no message to copy.');
+            }
+        }
 </script>
 </body>
 </html>
