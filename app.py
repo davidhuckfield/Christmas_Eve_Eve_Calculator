@@ -10,14 +10,21 @@ def home():
         # Get the date input from the form
         input_date_str = request.form.get('input_date')
         input_name = request.form.get('input_name')
-        input_date = datetime.strptime(input_date_str, '%Y-%m-%d').date()
+
+        if input_date_str:
+            input_date = datetime.strptime(input_date_str, '%Y-%m-%d').date()
+        else:
+            input_date = None
+        
         message = xmas_eve_calc(input_date, input_name)
+
     return render_template('index.html', message=message)
 
 def xmas_eve_calc(input_date, input_name):
     xmas_day = date(2024, 12, 25)
     return_string = ""
     input_or_today = ""
+    
     if input_date:
         days = xmas_day - input_date
         input_or_today = input_date.strftime('%m/%d/%y')
