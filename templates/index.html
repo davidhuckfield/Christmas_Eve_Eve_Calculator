@@ -4,16 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Flask App</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}"/>
 </head>
 <body>
+    <div id="main">
     <h1>Christmas Eve Calculator V2.0</h1>
 
     <form method="POST">
         <label for="input_date">Enter a date (YYYY-MM-DD):</label>
         <input type="date" id="input_date" name="input_date" required>
+        <label for="input_name">Enter your name</label>
+        <input type="text" id="input_name" name="input_name" required>
         <button type="submit">Calculate Days Until Christmas</button>
     </form>
 
     <p>{{ message }}</p>
+</div>
 </body>
 </html>

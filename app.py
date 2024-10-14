@@ -9,14 +9,18 @@ def home():
     if request.method == 'POST':
         # Get the date input from the form
         input_date_str = request.form.get('input_date')
+        input_name = request.form.get('input_name')
         input_date = datetime.strptime(input_date_str, '%Y-%m-%d').date()
-        message = xmas_eve_calc(input_date)
+        message = xmas_eve_calc(input_date, input_name)
     return render_template('index.html', message=message)
 
-def xmas_eve_calc(input_date):
+def xmas_eve_calc(input_date, input_name):
     xmas_day = date(2024, 12, 25)
     days = xmas_day - input_date
-    return_string = "Today is Christmas "
+    if (input_name=="Vici"):
+        return_string = f"Vici isn't a proper name - did you mean to put Vicky? Today is Christmas "
+    else:
+        return_string = f"Hello {input_name}! Today is Christmas "
     days_number = days.days
     
     for i in range(days_number):
