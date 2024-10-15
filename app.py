@@ -43,9 +43,12 @@ def xmas_eve_calc(input_date, input_name):
     days_number = days.days
     
     for i in range(days_number):
-        return_string += "Eve "
+        if i < days_number-1:
+            return_string += "Eve "
+        else:
+            return_string += "Eve."
     
-    return_string += ". There are "
+    return_string += " There are "
     return_string += str(days_number)
     return_string += " days until Christmas!"
     
