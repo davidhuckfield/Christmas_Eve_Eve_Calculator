@@ -44,7 +44,7 @@ def xmas_eve_calc(input_date, input_name):
             return_string = f"Hello {input_name}! {input_or_today} is Christmas "
     else:
         return_string = f"{input_or_today} is Christmas "
-
+#extract days number from date object
     days_number = days.days
 
     for i in range(days_number):
