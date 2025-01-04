@@ -26,12 +26,14 @@ def xmas_eve_calc(input_date, input_name):
     return_string = ""
     # display variable depending on input or blank
     input_or_today = ""
-    
+
+    #if input date exists / date has been inputted
     if input_date:
         input_year = input_date.year
         xmas_day = date(input_year, 12, 25)
         days = xmas_day - input_date
         input_or_today = input_date.strftime('%m/%d/%y')
+    #else set day to today
     else:
         days = xmas_day - date.today()
         input_or_today = "Today"
@@ -43,7 +45,7 @@ def xmas_eve_calc(input_date, input_name):
             return_string = f"Hello {input_name}! {input_or_today} is Christmas "
     else:
         return_string = f"{input_or_today} is Christmas "
-
+#extract days number from date object
     days_number = days.days
 
     for i in range(days_number):
@@ -60,3 +62,5 @@ def xmas_eve_calc(input_date, input_name):
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+
