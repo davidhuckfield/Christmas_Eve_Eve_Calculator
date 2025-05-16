@@ -39,10 +39,7 @@ def xmas_eve_calc(input_date, input_name):
         input_or_today = "Today"
 
     if input_name:
-        if (input_name.lower()=="vici"):
-            return_string += f"Vici isn't a proper name - did you mean to put Vicky? {input_or_today} is Christmas "
-        else:
-            return_string = f"Hello {input_name}! {input_or_today} is Christmas "
+        return_string = f"Hello {input_name}! {input_or_today} is Christmas "
     else:
         return_string = f"{input_or_today} is Christmas "
 #extract days number from date object
