@@ -14,6 +14,8 @@ pip install -r requirements.txt
 pkill gunicorn || true
 
 # Start the Flask app using Gunicorn with SSL
-sudo /home/ec2-user/Christmas_Eve_Eve_Calculator/venv/bin/gunicorn \ -w 1 -b 0.0.0.0:443 application:application \
+sudo /home/ec2-user/Christmas_Eve_Eve_Calculator/venv/bin/gunicorn \
+  application:application \
+  -w 1 -b 0.0.0.0:443 \
   --certfile=/etc/letsencrypt/live/xmas-eve-eve.com/fullchain.pem \
   --keyfile=/etc/letsencrypt/live/xmas-eve-eve.com/privkey.pem
