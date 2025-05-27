@@ -15,5 +15,5 @@ pkill gunicorn || true
 
 # Start the Flask app using Gunicorn with SSL
 gunicorn -w 1 -b 0.0.0.0:443 application:application \
-  --certfile=/etc/letsencrypt/live/xmas-eve-eve.com/fullchain.pem \
-  --keyfile=/etc/letsencrypt/live/xmas-eve-eve.com/privkey.pem
+  --certfile=/etc/letsencrypt/live/xmas-eve-eve.com/fullchain1.pem \
+  --keyfile=/etc/letsencrypt/live/xmas-eve-eve.com/privkey1.pem
