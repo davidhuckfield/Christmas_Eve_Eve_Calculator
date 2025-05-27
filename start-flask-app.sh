@@ -14,7 +14,6 @@ pip install -r requirements.txt
 pkill gunicorn || true
 
 # Start the Flask app using Gunicorn with SSL
-# Running with sudo as quick fix for issue with Gunicorn not having access to cert files
-sudo gunicorn -w 1 -b 0.0.0.0:443 application:application \
+gunicorn -w 1 -b 0.0.0.0:443 application:application \
   --certfile=/etc/letsencrypt/live/xmas-eve-eve.com/fullchain.pem \
   --keyfile=/etc/letsencrypt/live/xmas-eve-eve.com/privkey.pem
