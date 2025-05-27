@@ -1,6 +1,6 @@
 #!/bin/bash
-source /home/ec2-user/your-app/venv/bin/activate
-cd /home/ec2-user/your-app/
+source /home/ec2-user/Christmas_Eve_Eve_Calculator/venv/bin/activate
+cd /home/ec2-user/Christmas_Eve_Eve_Calculator/
 pkill gunicorn || true
 gunicorn --certfile=/etc/letsencrypt/live/xmas-eve-eve.com/fullchain.pem \
          --keyfile=/etc/letsencrypt/live/xmas-eve-eve.com/privkey.pem \
