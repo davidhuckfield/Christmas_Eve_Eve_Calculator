@@ -1,4 +1,5 @@
 #!/bin/bash
+
 cd /home/ec2-user/Christmas_Eve_Eve_Calculator
 
 # Activate virtual environment
@@ -13,9 +14,7 @@ pip install -r requirements.txt
 # Kill any existing gunicorn process
 pkill gunicorn || true
 
-# Start the Flask app using Gunicorn with SSL
-sudo /home/ec2-user/Christmas_Eve_Eve_Calculator/venv/bin/gunicorn \
+# Start the Flask app using Gunicorn on port 8000 (Nginx will reverse proxy HTTPS to this)
+/home/ec2-user/Christmas_Eve_Eve_Calculator/venv/bin/gunicorn \
   application:application \
-  -w 1 -b 0.0.0.0:443 \
-  --certfile=/etc/letsencrypt/live/xmas-eve-eve.com/fullchain.pem \
-  --keyfile=/etc/letsencrypt/live/xmas-eve-eve.com/privkey.pem
+  -w 1 -b 127.0.0.1:8000
