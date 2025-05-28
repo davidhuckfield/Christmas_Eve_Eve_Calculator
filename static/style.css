@@ -27,7 +27,7 @@ body {
     display:flex;
     flex-direction:column;
     align-items:center;
-    max-width: 60vw;
+    max-width: 80vw;
 }
 
 h1 {
