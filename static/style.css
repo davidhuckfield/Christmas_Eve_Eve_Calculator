@@ -7,7 +7,6 @@ body {
     justify-content: center;
     height:100vh;
     margin:0;
-    overflow:hidden
 }
 
 #snow-canvas {
@@ -38,6 +37,8 @@ body {
     flex-direction:column;
     align-items:center;
     justify-content: center;
+    max-height:85vh;
+    max-width:85vw
 }
 
 h1 {
