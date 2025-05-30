@@ -21,6 +21,7 @@ body {
     text-align:center;
     align-items:center;
     justify-content: center;
+    padding:20px
 }
 
 #main {
@@ -58,6 +59,11 @@ label {
 #inputs-div {
     display:flex;
     flex-direction:row
+}
+
+#enter-name, #enter-date {
+    display:flex;
+    flex-direction:column
 }
 
 input {
