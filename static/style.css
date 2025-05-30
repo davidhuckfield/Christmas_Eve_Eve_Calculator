@@ -63,7 +63,8 @@ label {
 
 #enter-name, #enter-date {
     display:flex;
-    flex-direction:column
+    flex-direction:column;
+    margin:10px
 }
 
 input {
