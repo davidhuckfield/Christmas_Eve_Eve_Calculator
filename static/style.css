@@ -2,7 +2,10 @@ body {
     background-color: black;
     font-family:"Mountains of Christmas", serif;
     display:flex;
-    text-align:center
+    text-align:center;
+    align-items:center;
+    height:100vh;
+    margin:0
 }
 
 #snow-canvas {
@@ -12,7 +15,9 @@ body {
     width: 100%;
     height: 100%;
     z-index: -1; /* Place behind main content */
-    text-align:center
+    display:flex;
+    text-align:center;
+    align-items:center
 }
 
 #main {
