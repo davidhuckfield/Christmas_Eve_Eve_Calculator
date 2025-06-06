@@ -3,7 +3,7 @@ name: Deploy to EC2
 on:
   push:
     branches:
-      - main  # or your preferred branch
+      - main
 
 jobs:
   deploy:
@@ -24,5 +24,6 @@ jobs:
           git pull origin main
           source venv/bin/activate
           pip install -r requirements.txt
-          pkill gunicorn || true
-          nohup gunicorn -b 0.0.0.0:5000 application:application &
+          chmod +x start-flask-app.sh
+          tmux kill-session -t flaskapp || true
+          tmux new-session -d -s flaskapp './start-flask-app.sh'

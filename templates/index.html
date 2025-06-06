@@ -21,14 +21,23 @@
     <canvas id="snow-canvas"></canvas>
     <div id="main">
     <h1>Christmas Eve Calculator V2.0</h1>
-    <p>As you know, the day before Christmas Day is Christmas Eve. That means the day before Christmas Eve is Christmas Eve Eve, and the day before that is Christmas Eve Eve Eve...and so on.</p>
+    <p>As you know, the day before Christmas Day is Christmas Eve. </p>
+    <p>That means the day before Christmas Eve is Christmas Eve Eve, and the day before that is Christmas Eve Eve Eve...and so on.</p>
     <p>Enter a date (or leave blank for today's date) and find out what today is!</p>
 
     <form method="POST">
-        <label for="input_date">Enter a date (blank for today):</label>
-        <input type="date" id="input_date" name="input_date">
-        <label for="input_name">Enter your name (optional):</label>
-        <input type="text" id="input_name" name="input_name">
+        
+        <div id="inputs-div">
+            <div id="enter-date">
+                <label for="input_date">Enter a date (blank for today):</label>
+                <input type="date" id="input_date" name="input_date">
+            </div>
+            <div id="enter-name">
+                <label for="input_name">Enter your name (optional):</label>
+                <input type="text" id="input_name" name="input_name">
+            </div>
+        </div>
+       
         <button type="submit">Calculate Days Until Christmas</button>
     </form>
 
